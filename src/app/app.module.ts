@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -10,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 //Componentes
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DetailComponent } from './components/detail/detail.component';
 import { LoginComponent } from './components/login/login.component';
 import {
   RecuperarPasswordComponent,
@@ -17,6 +19,7 @@ import {
 import {
   RegistrarUsuarioComponent,
 } from './components/registrar-usuario/registrar-usuario.component';
+import { SearchComponent } from './components/search/search.component';
 import {
   VerificarCorreoComponent,
 } from './components/verificar-correo/verificar-correo.component';
@@ -30,12 +33,15 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     RegistrarUsuarioComponent,
     VerificarCorreoComponent,
     SpinnerComponent,
-    RecuperarPasswordComponent
+    RecuperarPasswordComponent,
+    SearchComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     
   ],

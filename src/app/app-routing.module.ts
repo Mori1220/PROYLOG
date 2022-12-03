@@ -5,6 +5,7 @@ import {
 } from '@angular/router';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DetailComponent } from './components/detail/detail.component';
 import { LoginComponent } from './components/login/login.component';
 import {
   RecuperarPasswordComponent,
@@ -12,6 +13,7 @@ import {
 import {
   RegistrarUsuarioComponent,
 } from './components/registrar-usuario/registrar-usuario.component';
+import { SearchComponent } from './components/search/search.component';
 import {
   VerificarCorreoComponent,
 } from './components/verificar-correo/verificar-correo.component';
@@ -23,8 +25,9 @@ const routes: Routes = [
   { path: 'verificar-correo', component: VerificarCorreoComponent },
   { path: 'recuperar-password', component: RecuperarPasswordComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: '**', redirectTo: 'login', pathMatch: 'full' },
-];
+  { path: 'detail', component: DetailComponent    },
+  { path: 'search', component:SearchComponent },
+]; 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
