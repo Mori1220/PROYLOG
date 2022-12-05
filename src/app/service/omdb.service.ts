@@ -7,10 +7,16 @@ import { Injectable } from '@angular/core';
 export class OmdbService {
   url = "https://www.omdbapi.com/?i=tt3896198&apikey=d8fee32c"
 
-  constructor(private http: HttpClient  ) { }
-    getQuery(query: string){
+  constructor(private http: HttpClient  ) { 
+
+  }
+    /*getQuery(query: string){
       const url = `${this.url} ${query}`;
 
       return this.http.get(url);
+    }*/
+
+    getQuery() {
+      return this.http.get('https://pokeapi.co/api/v2/pokemon?limit=151');
     }
 }

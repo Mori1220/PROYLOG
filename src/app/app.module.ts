@@ -1,7 +1,10 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
-import { ReactiveFormsModule } from '@angular/forms';
+import {
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { environment } from 'src/environments/environment';
@@ -35,13 +38,17 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     SpinnerComponent,
     RecuperarPasswordComponent,
     SearchComponent,
-    DetailComponent
+    DetailComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
+
     AngularFireModule.initializeApp(environment.firebaseConfig),
     
   ],

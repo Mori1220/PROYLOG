@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+} from '@angular/core';
+
+import { OmdbService } from 'src/app/service/omdb.service';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +12,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+ busqueda: string = '';
+ resultados: any
+ 
+ 
 
+ 
+
+
+  constructor(private serviceOmdb: OmdbService,) { }
+  
   ngOnInit(): void {
+    this.buscar();
   }
 
-}
+  buscar (){
+    this.serviceOmdb.getQuery()
+    .subscribe(response => {
+      this.resultados = response;
+      console.log(response);
+      
+    });
+
+  }
+  
+  }
+
